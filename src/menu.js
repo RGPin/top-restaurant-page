@@ -1,3 +1,5 @@
+
+
 export function menuPage(content) {
     content.textContent = "";
     const test = document.createElement("p");
