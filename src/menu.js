@@ -1,24 +1,40 @@
 import { appetizers, beverages, desserts, main } from "./menuList";
 
-function menuCard(menu) {
-    const menuArray = [appetizers, beverages, desserts, main];
-    menuArray.forEach((category) => {
-        for (const [key, value] of Object.entries(category)) {
-            const card = document.createElement("div");
-            const img = document.createElement("img");
-            const description = document.createElement("p");
-            const pricing = document.createElement("p");
+const categories = {
+    appetizers,
+    beverages,
+    desserts,
+    main: main,
+};
 
-            img.src = value.src;
-            description.textContent = value.description;
-            pricing.textContent = value.pricing;
 
-            card.appendChild(img);
-            card.appendChild(description);
-            card.appendChild(pricing);
-            menu.appendChild(card);
-        }
-    });
+function menuCard(category, categoryListContainer) {
+    const selectedCategory = categories[category];
+    if (!selectedCategory) return;
+
+    categoryListContainer.textContent = "";
+
+    for (const [_key, value] of Object.entries(selectedCategory)) {
+        const card = document.createElement("div");
+        const img = document.createElement("img");
+        const description = document.createElement("p");
+        const pricing = document.createElement("p");
+
+        card.classList.add("card");
+        description.classList.add("description");
+        pricing.classList.add("price");
+
+        img.src = value.src;
+        img.alt = value.description;
+        description.textContent = value.description;
+        pricing.textContent = value.pricing;
+
+        card.appendChild(img);
+        card.appendChild(description);
+        card.appendChild(pricing);
+        categoryListContainer.appendChild(card);
+
+    };
 };
 
 export function menuPage(content) {
@@ -29,9 +45,35 @@ export function menuPage(content) {
     content.textContent = "";
 
     const menu = document.createElement("div");
-    menu.classList.add("menu");
+    const categoryBtnContainer = document.createElement("div");
+    const appetizerBtn = document.createElement("button");
+    const beveragesBtn = document.createElement("button");
+    const mainBtn = document.createElement("button");
+    const dessertsBtn = document.createElement("button");
+    const categoryListContainer = document.createElement("div");
 
-    menuCard(menu);
+    appetizerBtn.textContent = "Appetizers";
+    beveragesBtn.textContent = "Beverages";
+    mainBtn.textContent = "Main Courses";
+    dessertsBtn.textContent = "Desserts";
+
+    menuCard("appetizers", categoryListContainer);
+
+    appetizerBtn.addEventListener("click", () => menuCard("appetizers", categoryListContainer));
+    beveragesBtn.addEventListener("click", () => menuCard("beverages", categoryListContainer));
+    mainBtn.addEventListener("click", () => menuCard("main", categoryListContainer));
+    dessertsBtn.addEventListener("click", () => menuCard("desserts", categoryListContainer));
+
+    categoryBtnContainer.appendChild(appetizerBtn);
+    categoryBtnContainer.appendChild(beveragesBtn);
+    categoryBtnContainer.appendChild(mainBtn);
+    categoryBtnContainer.appendChild(dessertsBtn);
+    menu.appendChild(categoryBtnContainer);
+    menu.appendChild(categoryListContainer);
+
+    menu.classList.add("menu");
+    categoryBtnContainer.classList.add("category-btns");
+    categoryListContainer.classList.add("category-list");
 
     content.appendChild(menu);
 }

@@ -70,3 +70,39 @@ header nav button:hover {
     background-color: white;
     overflow: auto;
 }
+
+.category-btns {
+    display: grid;
+    padding-bottom: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.category-btns button {
+    font-size: 2rem;
+    border-width: 0px 1px 1px 1px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.category-btns button:hover {
+    background-color: gray;
+}
+
+.card img {
+    height: 15rem;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    gap: 30px;
+    border-bottom: 5px dotted;
+    font-size: 1.5rem;
+}
+
+.card p.description {
+  flex: 1;
+  text-align: left;
+}

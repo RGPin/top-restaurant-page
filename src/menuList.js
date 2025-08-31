@@ -19,7 +19,7 @@ const descriptions = {
   "Soft_Drinks.jpeg": "Choice of Coke, Sprite, or Fanta.",
   "Chocolate_Lava_Cake.jpeg": "Warm chocolate cake with molten center, served with vanilla ice cream.",
   "Fruit_Tart.jpeg": "Flaky crust with custard cream topped with fresh fruits.",
-  "Ice_Cream_Trio": "Three scoops: chocolate, vanilla, and strawberry.",
+  "Ice_Cream_Trio.jpeg": "Three scoops: chocolate, vanilla, and strawberry.",
   "New_York_Cheesecake.jpeg": "Creamy cheesecake with a graham cracker crust.",
   "Tiramisu.jpeg": "Coffee-soaked ladyfingers layered with mascarpone cream.",
   "Classic_Cheeseburger.jpeg": "Angus beef patty, cheddar, lettuce, tomato, served with fries.",
@@ -42,7 +42,7 @@ const pricing = {
   "Soft_Drinks.jpeg": "3$",
   "Chocolate_Lava_Cake.jpeg": "9$",
   "Fruit_Tart.jpeg": "9$",
-  "Ice_Cream_Trio": "7$",
+  "Ice_Cream_Trio.jpeg": "7$",
   "New_York_Cheesecake.jpeg": "8$",
   "Tiramisu.jpeg": "8$",
   "Classic_Cheeseburger.jpeg": "15$",
@@ -71,5 +71,3 @@ const desserts = importAll(require.context('./images/menu/desserts', false, /\.(
 const main = importAll(require.context('./images/menu/main', false, /\.(png|jpe?g|svg)$/));
 
 export { appetizers, beverages, desserts, main };
-
-// export { appetizers };
