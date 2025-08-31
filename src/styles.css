@@ -63,3 +63,10 @@ header nav button:hover {
     font-style: italic;
     font-weight: 100;
 }
+
+.menu{
+    width: 70vw;
+    height: 85vh;
+    background-color: white;
+    overflow: auto;
+}
