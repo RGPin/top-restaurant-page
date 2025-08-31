@@ -16,6 +16,12 @@ export function aboutPage(content) {
     const contactNum = document.createElement("p");
     const contactEmail = document.createElement("p");
 
+    const imageSrc = document.createElement("p");
+
+    imageSrc.classList.add("img-src");
+
+    imageSrc.textContent = "Image taken from: https://www.pexels.com/photo/white-ceramic-mug-with-coffee-beside-brown-dried-leaf-10749578/";
+
     aboutTitle.textContent = "About us";
     aboutText.innerHTML = `This is a page about us. This about page specifically talks about us. 
     While this page is named about us, this page is talking about us and not about the about us page. 
@@ -25,7 +31,7 @@ export function aboutPage(content) {
     instead decided to put the about us and contacts in one page. This is because the developer has yet to eat
     in our restaurant. This is what happens when people don't eat in our restaurant. They become incompetent
     and lazy. Just like the developer who made this site. So please come and eat in La Talove... La Talova?
-    La Tavola?... please come eat in our restaurant. Thank you`;
+    La Tavola?... this is what happens when we take a random italian word. Is it italian?... please come eat in our restaurant. Thank you`;
     contactNum.textContent= "Contact: +XXXXXXXXXXX";
     contactEmail.textContent = "Email: email@thisisanemail.com";
 
@@ -36,5 +42,6 @@ export function aboutPage(content) {
     about.appendChild(aboutTitle);
     about.appendChild(aboutText);
     about.appendChild(contact);
+    about.appendChild(imageSrc);
     content.appendChild(about);
 }

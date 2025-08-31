@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: 1px solid; */
 }
 
 body {
@@ -128,4 +127,15 @@ header nav button:hover {
     width: 60ch;
     font-size: 1.5rem;
     line-height: 40px;
+}
+
+.home .img-src,.about .img-src, #content .img-src {
+    width: 50%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: 5px;
+    color: white;
+    text-align: center;
 }

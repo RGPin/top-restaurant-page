@@ -52,6 +52,13 @@ export function menuPage(content) {
     const dessertsBtn = document.createElement("button");
     const categoryListContainer = document.createElement("div");
 
+    const imageSrc = document.createElement("p");
+    imageSrc.classList.add("img-src");
+    imageSrc.textContent = `Note! These images are AI generated! I repeat: AI GENERATED! 
+    I asked an AI to give me a list of food with descriptions then I entered the descriptions in an AI
+    image generator. I have no idea if these images are accurate since I haven't ecountered atleast 80%
+    of these food.`;
+
     appetizerBtn.textContent = "Appetizers";
     beveragesBtn.textContent = "Beverages";
     mainBtn.textContent = "Main Courses";
@@ -76,4 +83,5 @@ export function menuPage(content) {
     categoryListContainer.classList.add("category-list");
 
     content.appendChild(menu);
+    content.appendChild(imageSrc);
 }
